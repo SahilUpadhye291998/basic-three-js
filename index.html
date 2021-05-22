@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <style>
+    body {
+      margin: 0px;
+      font-size: 35px;
+    }
+
+    .center {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="absolute text-white text-center center">
+      <h1>Sid's Website</h1>
+      <p>Click Button below to go on an advanture</p>
+      <button id="btnTransition"
+        class="bg-transparent text-white-400 font-semibold hover:text-white py-2 px-4 border border-white-400 rounded">Take
+        off</button>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

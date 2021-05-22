@@ -1,0 +1,57 @@
+// const gui = new dat.GUI();
+// const world = {
+//     plain: {
+//         width: 300,
+//         height: 300,
+//         widthSegments: 150,
+//         heightSegments: 250,
+//     }
+// }
+// gui.add(world.plain, 'width', 1, 500).onChange(generatePlane)
+// gui.add(world.plain, 'height', 1, 500).onChange(generatePlane)
+// gui.add(world.plain, 'widthSegments', 1, 500).onChange(generatePlane)
+// gui.add(world.plain, 'heightSegments', 1, 500).onChange(generatePlane)
+
+
+const raycaster = new THREE.Raycaster();
+
+// Step 1 : to create the seane where all the other element will be placed on
+const scene = new THREE.Scene();
+/**
+ * Step 2 : Create the camera object
+ *  parameters: 
+ *  first argument: field of view or value in degree
+ *  second argument: size of the object in the view
+ *  third argument: (near clipping point [will take closness into accound] ) point at which object need to be cliped out or stop showing
+ *  forth argument: (far clipping point [will take farness into accound] ) point at which object need to be cliped out or stop showing
+ */
+const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 1000)
+/**
+ * step 3: to get the renderer in the seane
+ */
+const renderer = new THREE.WebGLRenderer();
+
+// add the dom element of the renderer to the body 
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(devicePixelRatio);
+document.body.appendChild(renderer.domElement)
+
+const geometry = new THREE.BoxGeometry(1, 1, 1);
+const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
+const mesh = new THREE.Mesh(geometry, material);
+
+scene.add(mesh);
+console.log(mesh);
+const light = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(0, 0, 1);
+scene.add(light);
+
+camera.position.z = 7;
+
+renderer.render(scene, camera);
+
+function animate() {
+
+}
+
+animate
